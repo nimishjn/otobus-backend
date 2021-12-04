@@ -12,4 +12,3 @@ connection
     .on("error", (err) => {
         console.log("Error connecting to mongoDB:", err);
     });
-

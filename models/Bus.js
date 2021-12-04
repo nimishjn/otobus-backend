@@ -41,10 +41,12 @@ const BusSchema = new Schema({
     totalSeats:{
         type: Number,
         required:true,
+        default: 40,
     },
     availableSeats:{
         type: Number,
         required:true,
+        default: 40,
     },
     waiting:{
         type: Number,
