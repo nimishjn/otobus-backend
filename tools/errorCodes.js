@@ -3,15 +3,18 @@ const error_codes = {
   E1: "unexpected values recieved",
   E2: "token validation failed",
   E3: "email not found in database",
-  E4: "incorrect password",
+
 };
 
 const logical_errors = {
-//   L1: "user already exists",
+  L0: "incorrect password",
+  L1: "user already exists",
+  L2: "",
 };
 
 const success_codes = {
   S0: "User created",
+  S1: "Password correct",
 
 };
 

@@ -58,5 +58,5 @@ const BusSchema = new mongoose.Schema({
         required:true,
     },
 });
-const Bus = mongoose.model('Bus', BusSchema);
+const Bus = mongoose.model('buses', BusSchema);
 module.exports=Bus;

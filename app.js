@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // const authMiddleware = require('./middleware/authorize');
 
-// const loginRoute = require('./routes/login');
+const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
 // const listBusesRoute = require('./routes/listBuses');
 // const listBookingsRoute = require('./routes/listBookings');
@@ -22,7 +22,7 @@ const signupRoute = require('./routes/signup');
 // const busDetailsRoute = require('./routes/busDetails');
 // const bookBusRoute = require('./routes/bookBus');
 
-// app.use('/login', loginRoute);
+app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
 // app.use('/listBuses', listBusesRoute);
 // app.use('/listBookings', listBookingsRoute);
