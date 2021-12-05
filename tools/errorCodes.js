@@ -11,7 +11,8 @@ const logical_errors = {
 };
 
 const success_codes = {
-//   S0: "all nodes solved game over",
+  S0: "User created",
+
 };
 
 export default { error_codes, logical_errors, success_codes };

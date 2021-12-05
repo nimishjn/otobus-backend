@@ -1,6 +1,7 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require("mongoose");
 
-const BusSchema = new Schema({
+const BusSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     busId:{
         type: String,
         required:true,
@@ -48,7 +49,7 @@ const BusSchema = new Schema({
         required:true,
         default: 40,
     },
-    waiting:{
+    rating:{
         type: Number,
         required:true,
     },
@@ -57,5 +58,5 @@ const BusSchema = new Schema({
         required:true,
     },
 });
-const Bus = model('Bus', BusSchema);
-export default Bus;
+const Bus = mongoose.model('Bus', BusSchema);
+module.exports=Bus;

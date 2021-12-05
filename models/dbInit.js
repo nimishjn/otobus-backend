@@ -1,11 +1,8 @@
-import { connect, connection } from "mongoose";
-connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
+const mongoose = require("mongoose");
+mongoose.connect(process.env.DB_CONNECTION, {
 });
 
-connection
+mongoose.connection
     .once("open", () => {
         console.log("Connection to mongoDB established");
     })

@@ -1,6 +1,7 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require("mongoose");
 
-const BookingSchema = new Schema({
+const BookingSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     bookingId:{
         type: String,
         required: true,
@@ -24,5 +25,5 @@ const BookingSchema = new Schema({
     },
 
 });
-const Booking = model('Booking', BookingSchema);
-export default Booking;
+const Booking = mongoose.model('Booking', BookingSchema);
+module.exports=Booking;

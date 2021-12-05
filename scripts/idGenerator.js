@@ -18,4 +18,4 @@ function bookingIdGenerator(length) {
     return result;
 }
 
-export default { bookingIdGenerator, busIdGenerator };
+module.exports= { bookingIdGenerator, busIdGenerator };
