@@ -9,6 +9,7 @@ const logical_errors = {
   L0: "incorrect password",
   L1: "user already exists",
   L2: "bus not found in database",
+  L3: "not enough seats available"
 };
 
 const success_codes = {
@@ -16,6 +17,7 @@ const success_codes = {
   S1: "Password correct",
   S2: "List of buses sent",
   S3: "Bus details was sent",
+  S4: "Bus booked"
 };
 
 export default { error_codes, logical_errors, success_codes };
