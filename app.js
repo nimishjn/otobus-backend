@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
-// const listBusesRoute = require('./routes/listBuses');
+const listBusesRoute = require('./routes/listBuses');
 // const listBookingsRoute = require('./routes/listBookings');
 // const deleteBookingRoute = require('./routes/deleteBooking');
 // const busDetailsRoute = require('./routes/busDetails');
@@ -24,7 +24,7 @@ const signupRoute = require('./routes/signup');
 
 app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
-// app.use('/listBuses', listBusesRoute);
+app.use('/listBuses', listBusesRoute);
 // app.use('/listBookings', listBookingsRoute);
 // app.use('/deleteBooking', deleteBookingRoute);
 // app.use('/busDetails', busDetailsRoute);

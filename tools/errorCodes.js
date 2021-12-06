@@ -15,6 +15,7 @@ const logical_errors = {
 const success_codes = {
   S0: "User created",
   S1: "Password correct",
+  S2: "List of buses sent"
 
 };
 
