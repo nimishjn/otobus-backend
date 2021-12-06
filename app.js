@@ -18,7 +18,7 @@ const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
 const listBusesRoute = require('./routes/listBuses');
 const listBookingsRoute = require('./routes/listBookings');
-// const deleteBookingRoute = require('./routes/deleteBooking');
+const deleteBookingRoute = require('./routes/deleteBooking');
 const busDetailsRoute = require('./routes/busDetails');
 const bookBusRoute = require('./routes/bookBus');
 
@@ -26,7 +26,7 @@ app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
 app.use('/listBuses', listBusesRoute);
 app.use('/listBookings', listBookingsRoute);
-// app.use('/deleteBooking', deleteBookingRoute);
+app.use('/deleteBooking', deleteBookingRoute);
 app.use('/busDetails', busDetailsRoute);
 app.use('/bookBus', bookBusRoute);
 
