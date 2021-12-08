@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 
 const Bus = require("../models/Bus");
 
-router.get("/", (req, res, next) => {
+router.post("/", (req, res, next) => {
   Bus.find({ busId: req.body.busId })
     .exec()
     .then((busDetails) => {
