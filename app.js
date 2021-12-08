@@ -21,6 +21,7 @@ const listBookingsRoute = require('./routes/listBookings');
 const deleteBookingRoute = require('./routes/deleteBooking');
 const busDetailsRoute = require('./routes/busDetails');
 const bookBusRoute = require('./routes/bookBus');
+const userDetails = require('./routes/userDetails');
 
 app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
@@ -29,6 +30,7 @@ app.use('/listBookings', authMiddleware, listBookingsRoute);
 app.use('/deleteBooking', authMiddleware, deleteBookingRoute);
 app.use('/busDetails', authMiddleware, busDetailsRoute);
 app.use('/bookBus', authMiddleware, bookBusRoute);
+app.use('/userDetails', authMiddleware, userDetails);
 
 app.use((error, req, res, next) => {
   res.status(error.status || 500);

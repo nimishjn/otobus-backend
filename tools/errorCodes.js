@@ -19,7 +19,8 @@ const success_codes = {
   S2: "List of buses sent",
   S3: "Bus details was sent",
   S4: "Bus booked",
-  S5: "Booking deleted"
+  S5: "Booking deleted",
+  S6: "User present",
 };
 
 export default { error_codes, logical_errors, success_codes };

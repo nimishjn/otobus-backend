@@ -13,7 +13,7 @@ const decodeJWT = (req, res, next) => {
   }
 
   try {
-    req.emailFromToken = jwt.verify(token, process.env.TOKEN_SECRET);
+    req.emailFromToken = jwt.verify(token, process.env.TOKEN_SECRET).username;
     console.log("From token: ", req.emailFromToken);
     next();
   } catch (err) {
