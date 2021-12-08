@@ -5,8 +5,8 @@ const bcrypt = require("bcryptjs");
 
 const Booking = require("../models/Booking");
 
-router.delete("/", (req, res, next) => {
-  Booking.deleteOne({bookingId: req.body.bookingId})
+router.delete("/:bookingId", (req, res, next) => {
+  Booking.deleteOne({bookingId: req.params.bookingId, email: req.emailFromToken})
     .exec()
     .then(() => {
       return res.status(200).json({
