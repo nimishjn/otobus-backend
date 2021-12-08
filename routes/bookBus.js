@@ -37,7 +37,7 @@ router.post("/", (req, res, next) => {
         let newBooking = new Booking({
           bookingId: newBookingId,
           busId: req.body.busId,
-          email: "abc@gmail.com",
+          email: req.emailFromToken,
           source: busDetails.source,
           destination: busDetails.destination,
           fare: busDetails.fare,

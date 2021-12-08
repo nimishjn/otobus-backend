@@ -11,7 +11,6 @@ router.delete("/", (req, res, next) => {
     .then(() => {
       return res.status(200).json({
         code: "S5",
-        
       });
     })
     .catch(err => {
@@ -19,7 +18,6 @@ router.delete("/", (req, res, next) => {
             code: "E4",
             error: err
           });
-
     });
 });
 

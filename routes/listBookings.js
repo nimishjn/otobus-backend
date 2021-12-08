@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const Booking = require("../models/Booking");
 
 router.get("/", (req, res, next) => {
-  Booking.find({email: "abc@gmail.com"})
+  Booking.find({email: req.emailFromToken})
     .exec()
     .then((bookings) => {
       return res.status(200).json({
