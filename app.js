@@ -1,10 +1,13 @@
 const express=require("express");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 
 const app = express();
 
 require('dotenv/config');
 require('./models/dbInit');
+
+const cors = require('cors');
+app.use(cors());
 
 app.set("trust proxy", true);
 app.use(express.json());

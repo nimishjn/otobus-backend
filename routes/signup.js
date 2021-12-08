@@ -12,7 +12,8 @@ router.post("/", (req, res, next) => {
         .then(user => {
             if (user.length >= 1) {
                 return res.status(409).json({
-                    message: "Mail exists"
+                    message: "Mail exists",
+                    code: "L1",
                 });
             } else {
                 // bcrypt.hash(req.body.password, 10, (err, hash) => {
