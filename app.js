@@ -14,7 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 const authMiddleware = require('./middleware/authorize');
 
 const loginRoute = require('./routes/login');
