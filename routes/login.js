@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const generateAccessToken = require("../scripts/TokenGenerator");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
@@ -11,9 +12,10 @@ router.post("/", (req, res, next) => {
         .then(user => {
             if (user.length >= 1) {
                 if (user[0].password === req.body.password) {
+                    const token = generateAccessToken({ username: req.body.username });
                     return res.status(200).json({
                         code: "S1",
-                        token: ""
+                        token: token,
                     });
                 } else {
                     return res.status(401).json({
