@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const generateAccessToken = require("../scripts/TokenGenerator");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
@@ -33,8 +34,10 @@ router.post("/", (req, res, next) => {
                             .save()
                             .then(result => {
                                 console.log(result);
+                                const token = generateAccessToken({ username: req.body.email });
                                 res.status(201).json({
-                                    code: "S0"
+                                    code: "S0",
+                                    token: token,
                                 });
                             })
                             .catch(err => {

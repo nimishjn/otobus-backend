@@ -12,7 +12,7 @@ router.post("/", (req, res, next) => {
         .then(user => {
             if (user.length >= 1) {
                 if (user[0].password === req.body.password) {
-                    const token = generateAccessToken({ username: req.body.username });
+                    const token = generateAccessToken({ username: req.body.email });
                     return res.status(200).json({
                         code: "S1",
                         token: token,

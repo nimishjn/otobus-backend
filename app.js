@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// const authMiddleware = require('./middleware/authorize');
+const authMiddleware = require('./middleware/authorize');
 
 const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
@@ -24,11 +24,11 @@ const bookBusRoute = require('./routes/bookBus');
 
 app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
-app.use('/listBuses', listBusesRoute);
-app.use('/listBookings', listBookingsRoute);
-app.use('/deleteBooking', deleteBookingRoute);
-app.use('/busDetails', busDetailsRoute);
-app.use('/bookBus', bookBusRoute);
+app.use('/listBuses', authMiddleware, listBusesRoute);
+app.use('/listBookings', authMiddleware, listBookingsRoute);
+app.use('/deleteBooking', authMiddleware, deleteBookingRoute);
+app.use('/busDetails', authMiddleware, busDetailsRoute);
+app.use('/bookBus', authMiddleware, bookBusRoute);
 
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
